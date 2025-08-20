@@ -1,12 +1,6 @@
-📘 Pydantic
-  
-Pydantic es una librería de Python que permite:
+### Pydantic
+<p>
+Pydantic es una librería de Python que permite definir, validar y manejar datos de manera clara y segura usando anotaciones de tipo (type hints).
 
-📌 Definir modelos de datos usando clases.
-
-🔍 Validar automáticamente que los datos cumplan con los tipos especificados.
-
-🔄 Convertir tipos de datos (por ejemplo, cadenas a enteros o fechas).
-
-👉 Está construido sobre type hints de Python (int, str, float, datetime, etc.).
-👉 Se usa ampliamente en frameworks modernos como FastAPI.
+Fue creada por Samuel Colvin y es ampliamente usada en aplicaciones modernas, sobre todo en FastAPI, aunque también se puede usar en cualquier proyecto Python.
+</p>
