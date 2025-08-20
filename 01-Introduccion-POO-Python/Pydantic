@@ -1,1 +1,10 @@
+# 📘 Pydantic
 
+**Pydantic** es una librería de Python para **validación y modelado de datos** basada en *type hints*.  
+Permite definir modelos que aseguran que los datos cumplen con los tipos esperados y los convierte automáticamente cuando es posible.  
+
+✨ Características principales:
+- ✅ Validación automática de datos.  
+- 🔄 Conversión de tipos (ej: `"123"` → `int`).  
+- 📦 Modelado de datos sencillo con clases.  
+- ⚡ Integración con frameworks como **FastAPI**.  
