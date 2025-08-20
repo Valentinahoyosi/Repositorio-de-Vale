@@ -44,11 +44,12 @@ La Programación Orientada a Objetos es un paradigma de programación que organi
 
 ```python
 class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+    def __init__(self, nombre: str, edad: int) -> None:
+        self.nombre: str = nombre
+        self.edad: int = edad
 
-    def saludar(self):
+
+   def saludar(self) -> str:
         return f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años."
 
 # Crear objetos
@@ -87,27 +88,26 @@ Imagina que tienes una cuenta bancaria. No quieres que cualquiera pueda cambiar 
 
 ```python
 class CuentaBancaria:
-    def __init__(self, titular, saldo):
-        self.titular = titular
-        self.__saldo = saldo  # Atributo privado (doble guión bajo)
+    def __init__(self, titular: str, saldo: float) -> None:
+        self.titular: str = titular
+        self.__saldo: float = saldo  # Atributo privado
 
-    def depositar(self, cantidad):
-        if cantidad > 0:  # Validación
+    def depositar(self, cantidad: float) -> str:
+        if cantidad > 0:
             self.__saldo += cantidad
             return f"Depósito exitoso. Saldo: ${self.__saldo}"
         else:
             return "Cantidad inválida"
 
-    def retirar(self, cantidad):
+    def retirar(self, cantidad: float) -> str:
         if cantidad > 0 and cantidad <= self.__saldo:
             self.__saldo -= cantidad
             return f"Retiro exitoso. Saldo: ${self.__saldo}"
         else:
             return "Fondos insuficientes o cantidad inválida"
 
-    def mostrar_saldo(self):
+    def mostrar_saldo(self) -> str:
         return f"Saldo actual: ${self.__saldo}"
-
 # Uso de la clase
 cuenta = CuentaBancaria("Alejandro", 1000)
 print(cuenta.depositar(500))    # Depósito exitoso. Saldo: $1500
@@ -144,43 +144,44 @@ Imagina que estás creando un juego con diferentes tipos de vehículos. Todos ti
 
 ```python
 class Animal:
-    def __init__(self, nombre):
-        self.nombre = nombre
-        self.energia = 100
+    def __init__(self, nombre: str) -> None:
+        self.nombre: str = nombre
+        self.energia: int = 100
 
-    def hacer_sonido(self):
+    def hacer_sonido(self) -> str:
         return "Hace un sonido."
 
-    def comer(self):
+    def comer(self) -> str:
         self.energia += 20
         return f"{self.nombre} come y recupera energía. Energía: {self.energia}"
 
-class Perro(Animal):
-    def __init__(self, nombre, raza):
-        super().__init__(nombre)  # Llamar al constructor del padre
-        self.raza = raza
 
-    def hacer_sonido(self):
+class Perro(Animal):
+    def __init__(self, nombre: str, raza: str) -> None:
+        super().__init__(nombre)  # Llamar al constructor del padre
+        self.raza: str = raza
+
+    def hacer_sonido(self) -> str:
         return "Guau"
 
-    def jugar(self):
+    def jugar(self) -> str:
         if self.energia >= 20:
             self.energia -= 20
             return f"{self.nombre} juega felizmente. Energía: {self.energia}"
         else:
             return f"{self.nombre} está muy cansado para jugar"
 
-class Gato(Animal):
-    def __init__(self, nombre, color):
-        super().__init__(nombre)
-        self.color = color
 
-    def hacer_sonido(self):
+class Gato(Animal):
+    def __init__(self, nombre: str, color: str) -> None:
+        super().__init__(nombre)
+        self.color: str = color
+
+    def hacer_sonido(self) -> str:
         return "Miau"
 
-    def ronronear(self):
+    def ronronear(self) -> str:
         return f"{self.nombre} ronronea suavemente"
-
 # Crear instancias
 perro = Perro("Firulais", "Labrador")
 gato = Gato("Mishito", "Naranja")
@@ -281,24 +282,24 @@ Un sistema de gestión de vehículos para una empresa de alquiler. Todos los veh
 
 ```python
 class Vehiculo:
-    def __init__(self, marca, modelo, año):
-        self.marca = marca
-        self.modelo = modelo
-        self.año = año
-        self.__kilometraje = 0  # Atributo privado
-        self.disponible = True
+    def __init__(self, marca: str, modelo: str, año: int) -> None:
+        self.marca: str = marca
+        self.modelo: str = modelo
+        self.año: int = año
+        self.__kilometraje: int = 0  # Atributo privado
+        self.disponible: bool = True
 
-    def obtener_info(self):
+    def obtener_info(self) -> str:
         return f"{self.marca} {self.modelo} ({self.año})"
 
-    def alquilar(self):
+    def alquilar(self) -> str:
         if self.disponible:
             self.disponible = False
             return f"{self.obtener_info()} ha sido alquilado"
         else:
             return f"{self.obtener_info()} no está disponible"
 
-    def devolver(self, km_recorridos):
+    def devolver(self, km_recorridos: int) -> str:
         if not self.disponible:
             self.disponible = True
             self.__kilometraje += km_recorridos
@@ -306,46 +307,48 @@ class Vehiculo:
         else:
             return f"{self.obtener_info()} ya está disponible"
 
-    def mostrar_estado(self):
-        estado = "Disponible" if self.disponible else "Alquilado"
+    def mostrar_estado(self) -> str:
+        estado: str = "Disponible" if self.disponible else "Alquilado"
         return f"{self.obtener_info()} - Estado: {estado} - KM: {self.__kilometraje}"
 
-class Carro(Vehiculo):
-    def __init__(self, marca, modelo, año, num_puertas):
-        super().__init__(marca, modelo, año)
-        self.num_puertas = num_puertas
-        self.tipo_combustible = "Gasolina"
 
-    def obtener_info(self):
+class Carro(Vehiculo):
+    def __init__(self, marca: str, modelo: str, año: int, num_puertas: int) -> None:
+        super().__init__(marca, modelo, año)
+        self.num_puertas: int = num_puertas
+        self.tipo_combustible: str = "Gasolina"
+
+    def obtener_info(self) -> str:
         return f"Carro: {self.marca} {self.modelo} ({self.año}) - {self.num_puertas} puertas"
 
-    def cargar_combustible(self):
+    def cargar_combustible(self) -> str:
         return f"{self.obtener_info()} está cargando {self.tipo_combustible}"
+
 
 class Moto(Vehiculo):
-    def __init__(self, marca, modelo, año, cilindrada):
+    def __init__(self, marca: str, modelo: str, año: int, cilindrada: int) -> None:
         super().__init__(marca, modelo, año)
-        self.cilindrada = cilindrada
-        self.tipo_combustible = "Gasolina"
+        self.cilindrada: int = cilindrada
+        self.tipo_combustible: str = "Gasolina"
 
-    def obtener_info(self):
+    def obtener_info(self) -> str:
         return f"Moto: {self.marca} {self.modelo} ({self.año}) - {self.cilindrada}cc"
 
-    def cargar_combustible(self):
+    def cargar_combustible(self) -> str:
         return f"{self.obtener_info()} está cargando {self.tipo_combustible}"
 
-class Bicicleta(Vehiculo):
-    def __init__(self, marca, modelo, año, tipo):
-        super().__init__(marca, modelo, año)
-        self.tipo = tipo  # "Montaña", "Ruta", "Urbana"
-        self.tipo_combustible = "Humano"
 
-    def obtener_info(self):
+class Bicicleta(Vehiculo):
+    def __init__(self, marca: str, modelo: str, año: int, tipo: str) -> None:
+        super().__init__(marca, modelo, año)
+        self.tipo: str = tipo  # "Montaña", "Ruta", "Urbana"
+        self.tipo_combustible: str = "Humano"
+
+    def obtener_info(self) -> str:
         return f"Bicicleta: {self.marca} {self.modelo} ({self.año}) - {self.tipo}"
 
-    def cargar_combustible(self):
+    def cargar_combustible(self) -> str:
         return f"{self.obtener_info()} necesita que el ciclista coma para tener energía"
-
 # Crear flota de vehículos
 flota = [
     Carro("Toyota", "Corolla", 2023, 4),
