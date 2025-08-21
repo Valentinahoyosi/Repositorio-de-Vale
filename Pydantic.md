@@ -22,5 +22,16 @@ Se utiliza ampliamente en proyectos modernos, especialmente junto con **FastAPI*
 - Posibilidad de crear **validaciones personalizadas** con `@validator`.  
 - Definición de **restricciones** con `Field` (ejemplo: valores mínimos, máximos, longitud, regex).  
 - **Conversión automática** de tipos de datos.  
-- Compatible con **entornos asincrónicos (async/await)**.  
+- Compatible con **entornos asincrónicos (async/await)**.
+
+--- 
+
+## ¿Por qué usar Pydantic?
+  - **Código más robusto:** Al validar los datos de entrada, Pydantic ayuda a evitar errores comunes y a mejorar la fiabilidad del código.
+    
+  - **Mayor legibilidad y mantenibilidad:** La definición clara de modelos con tipos facilita la comprensión y el mantenimiento del código.
+ 
+  - **Desarrollo más rápido:** Al automatizar la validación y conversión de datos, Pydantic acelera el proceso de desarrollo.
+    
+  - **Facilita la documentación:** Los modelos Pydantic pueden utilizarse para generar documentación automática de APIs. 
 
