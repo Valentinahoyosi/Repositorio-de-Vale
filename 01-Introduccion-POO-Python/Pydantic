@@ -1,4 +1,4 @@
-# 📌 ¿Qué es Pydantic?
+## ¿Qué es Pydantic?
 
 Pydantic es una librería de Python que permite **validar y gestionar datos** de manera sencilla utilizando las **anotaciones de tipo** (type hints) del lenguaje.  
 Su objetivo principal es asegurar que los datos que entran en tu aplicación tengan el formato y los tipos correctos, simplificando la validación y reduciendo errores.
@@ -26,17 +26,4 @@ Se utiliza ampliamente en proyectos modernos, especialmente junto con **FastAPI*
 
 ---
 
-📖 **Ejemplo básico:**
 
-```python
-from pydantic import BaseModel
-
-class Usuario(BaseModel):
-    id: int
-    nombre: str
-    edad: int
-
-usuario = Usuario(id=1, nombre="Valentina", edad="20")
-
-print(usuario)       # id=1 nombre='Valentina' edad=20
-print(usuario.edad)  # convertido automáticamente a int
