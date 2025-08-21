@@ -1,4 +1,4 @@
-# Módulo 1: Introducción a la Programación Orientada a Objetos (POO) en Python
+#Pydantic
 
 ## Objetivos
 - Comprender los fundamentos de POO
