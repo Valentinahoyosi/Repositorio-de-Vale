@@ -1,4 +1,4 @@
-## ¿Qué es Pydantic?
+# Módulo 1: Introducción a la Programación Orientada a Objetos (POO) en Python
 
 Pydantic es una librería de Python que permite **validar y gestionar datos** de manera sencilla utilizando las **anotaciones de tipo** (type hints) del lenguaje.  
 Su objetivo principal es asegurar que los datos que entran en tu aplicación tengan el formato y los tipos correctos, simplificando la validación y reduciendo errores.
